@@ -93,13 +93,16 @@ public class InsuranceEstimatorGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_InputBoxActionPerformed
 
     private void CalculateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CalculateActionPerformed
-       int age = Integer.parseInt(InputBox.getText());
+      
        
         try {
+             int age = Integer.parseInt(InputBox.getText());
             double lifeInsuranceCost = calculateLifeInsurance(age);
          OutputBox.setText("$" + lifeInsuranceCost + " is your estimated cost of insurance");}
-        catch (InvalidAgeException ex) { JOptionPane.showMessageDialog(this, "You entered an invalid age!");
-        
+        catch (InvalidAgeException ex) { JOptionPane.showMessageDialog(this, "You entered an invalid age! life insurance can't be given to anyone under the age of 5, or over the age of 110. Please enter a valid age");
+        }
+        catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "Please enter a valid number");
         }
             
             
@@ -141,10 +144,12 @@ public class InsuranceEstimatorGUI extends javax.swing.JFrame {
     }
 
     
-    public static double calculateLifeInsurance(int age) throws InvalidAgeException {
+    public static double calculateLifeInsurance(int age) throws InvalidAgeException   {
         if (age < 5 || age > 110) {
             throw new InvalidAgeException("Invalid age supplied");
         }
+        
+        
 
         double insuranceCost = (5 * age) + 300;
         return insuranceCost;
