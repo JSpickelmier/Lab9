@@ -1,3 +1,9 @@
+
+import javax.swing.JOptionPane;
+
+
+
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -29,12 +35,17 @@ public class InsuranceEstimatorGUI extends javax.swing.JFrame {
         Calculate = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         InputBox = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        OutputBox = new javax.swing.JTextArea();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        OutputBox = new javax.swing.JTextPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         Calculate.setText("Click to calculate!");
+        Calculate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CalculateActionPerformed(evt);
+            }
+        });
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Please enter your age to recieve a qoute!");
@@ -45,9 +56,7 @@ public class InsuranceEstimatorGUI extends javax.swing.JFrame {
             }
         });
 
-        OutputBox.setColumns(20);
-        OutputBox.setRows(5);
-        jScrollPane1.setViewportView(OutputBox);
+        jScrollPane2.setViewportView(OutputBox);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -56,10 +65,10 @@ public class InsuranceEstimatorGUI extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(198, 198, 198)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Calculate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2)
+                    .addComponent(Calculate, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE)
                     .addComponent(InputBox, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(213, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -71,9 +80,9 @@ public class InsuranceEstimatorGUI extends javax.swing.JFrame {
                 .addComponent(InputBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(71, 71, 71)
                 .addComponent(Calculate, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(123, Short.MAX_VALUE))
+                .addGap(34, 34, 34)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(97, Short.MAX_VALUE))
         );
 
         pack();
@@ -82,6 +91,17 @@ public class InsuranceEstimatorGUI extends javax.swing.JFrame {
     private void InputBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InputBoxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_InputBoxActionPerformed
+
+    private void CalculateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CalculateActionPerformed
+       int age = Integer.parseInt(InputBox.getText());
+       try {
+            double lifeInsuranceCost = calculateLifeInsurance(age);
+            OutputBox.setText("$" + lifeInsuranceCost + " is the your yearly estimated cost of insurance. "); } 
+       catch (InvalidAgeException ex) { 
+           JOptionPane.showMessageDialog(this, "You entered an invalid age!");
+       }
+            
+    }//GEN-LAST:event_CalculateActionPerformed
 
     /**
      * @param args the command line arguments
@@ -117,12 +137,21 @@ public class InsuranceEstimatorGUI extends javax.swing.JFrame {
             }
         });
     }
+    
+     public static double calculateLifeInsurance(int age) throws InvalidAgeException {
+        if (age < 5 || age > 110) {
+            throw new InvalidAgeException("Invalid age supplied");
+        }
+
+        double insuranceCost = (5 * age) + 300;
+        return insuranceCost;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Calculate;
     private javax.swing.JTextField InputBox;
-    private javax.swing.JTextArea OutputBox;
+    private javax.swing.JTextPane OutputBox;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
 }
