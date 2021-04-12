@@ -27,17 +27,135 @@ public class SpaceApp extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        MercuryBTN = new javax.swing.JRadioButton();
+        VenusBTN = new javax.swing.JRadioButton();
+        EarthBTN = new javax.swing.JRadioButton();
+        MarsBTN = new javax.swing.JRadioButton();
+        JupiterBTN = new javax.swing.JRadioButton();
+        UranusBTN = new javax.swing.JRadioButton();
+        SaturnBTN1 = new javax.swing.JRadioButton();
+        NeptuneBTN = new javax.swing.JRadioButton();
+        PlutoBTN = new javax.swing.JRadioButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
+        jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        OutputTXTBOX = new javax.swing.JTextArea();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        MercuryBTN.setText("Mercury");
+
+        VenusBTN.setText("Venus");
+
+        EarthBTN.setText("Earth");
+
+        MarsBTN.setText("Mars");
+
+        JupiterBTN.setText("Jupiter");
+
+        UranusBTN.setText("Uranus");
+
+        SaturnBTN1.setText("Saturn");
+
+        NeptuneBTN.setText("Neptune");
+
+        PlutoBTN.setText("Pluto");
+
+        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane1.setViewportView(jList1);
+
+        jButton1.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 18)); // NOI18N
+        jButton1.setText("Calculate!");
+
+        jLabel1.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Satelites");
+
+        jLabel2.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Destination Planets");
+
+        OutputTXTBOX.setColumns(20);
+        OutputTXTBOX.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        OutputTXTBOX.setRows(5);
+        OutputTXTBOX.setText("...");
+        jScrollPane2.setViewportView(OutputTXTBOX);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(MarsBTN, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(JupiterBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(UranusBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(SaturnBTN1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(NeptuneBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PlutoBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(MercuryBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(VenusBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(EarthBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1))
+                .addGap(98, 98, 98)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane2)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(255, 255, 255))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(28, 28, 28)
+                    .addComponent(jLabel2)
+                    .addContainerGap(665, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(59, 59, 59)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(11, 11, 11)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(MercuryBTN)
+                        .addGap(18, 18, 18)
+                        .addComponent(VenusBTN)
+                        .addGap(18, 18, 18)
+                        .addComponent(EarthBTN)
+                        .addGap(18, 18, 18)
+                        .addComponent(MarsBTN)
+                        .addGap(18, 18, 18)
+                        .addComponent(JupiterBTN)
+                        .addGap(23, 23, 23)
+                        .addComponent(SaturnBTN1)
+                        .addGap(18, 18, 18)
+                        .addComponent(UranusBTN)
+                        .addGap(18, 18, 18)
+                        .addComponent(NeptuneBTN)
+                        .addGap(18, 18, 18)
+                        .addComponent(PlutoBTN))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 46, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(57, 57, 57)
+                    .addComponent(jLabel2)
+                    .addContainerGap(410, Short.MAX_VALUE)))
         );
 
         pack();
@@ -79,5 +197,21 @@ public class SpaceApp extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JRadioButton EarthBTN;
+    private javax.swing.JRadioButton JupiterBTN;
+    private javax.swing.JRadioButton MarsBTN;
+    private javax.swing.JRadioButton MercuryBTN;
+    private javax.swing.JRadioButton NeptuneBTN;
+    private javax.swing.JTextArea OutputTXTBOX;
+    private javax.swing.JRadioButton PlutoBTN;
+    private javax.swing.JRadioButton SaturnBTN1;
+    private javax.swing.JRadioButton UranusBTN;
+    private javax.swing.JRadioButton VenusBTN;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JList<String> jList1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
 }
