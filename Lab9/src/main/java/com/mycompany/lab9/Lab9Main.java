@@ -36,7 +36,14 @@ public class Lab9Main { public static void main(String[] args) {
     
     System.out.println("The area of Land Tract 1 is " + LandTract1.getArea() + " units");
      System.out.println("The area of Land Tract 2 is " + LandTract2.getArea() + " units");
-    
+     
+     if (LandTract1.equals(LandTract2)){
+         System.out.println("The Land Tracts have equal areas");
+     }
+     else { System.out.println("The Land Tracts do NOT have equal areas");}
+         
+     
+         }
     }
  
             
@@ -45,4 +52,4 @@ public class Lab9Main { public static void main(String[] args) {
     
     
     
-}
+
